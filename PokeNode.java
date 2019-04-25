@@ -1,9 +1,11 @@
 /**
  * Generic class for a Pokemon node.
  * @author Matthew Marabellas
- * @param <E> The datatype held in Nodes.
+ * @param <Pokemon> The datatype held in Nodes.
+ * @since 4/20/2019
  */
-public class PokeNode<E> {
+public class PokeNode<Pokemon>
+{
    /** Data held in Node. */
    private Pokemon pokeData;
    /** Integer for Key. */
@@ -11,20 +13,20 @@ public class PokeNode<E> {
    /** Counter for how many times a Pokemon species has been caught. */
    private int numCaught;
    /** Link to left child Node. */
-   private PokeNode lChild;
+   private PokeNode<Pokemon> lChild;
    /** Link to right child Node. */
-   private PokeNode rChild;
+   private PokeNode<Pokemon> rChild;
    
 	/**
 	 * Constructor for PokeNode.
-	 * @param pokeData The variable to store the Pokemon object.
+	 * @param pChose The variable to store the Pokemon object.
 	 * @param numCaught The counter to record amount of caught.
 	 * @param lChild The address of the left child.
 	 * @param rChild The address of the right child.
     */
-   public PokeNode(Pokemon pokeData, int numCaught, PokeNode lChild, 
-       PokeNode rChild) {
-      pokeData = new Squirtle();
+   public PokeNode(Pokemon pChose, int numCaught, PokeNode<Pokemon> lChild, 
+       PokeNode<Pokemon> rChild) {
+      pokeData = pChose;
       numCaught = 1;
       lChild = null;
       rChild = null;
@@ -42,9 +44,9 @@ public class PokeNode<E> {
    /** Get Methods. */
 	/**
     * Get Pokemon Method.
-	 * @return Pokemon to user.
+	 * @return PokeData to user.
     */
-   public Pokemon getPokemon() {
+   public Pokemon getPokeData() {
       return pokeData;
    }
 	/**
@@ -78,6 +80,13 @@ public class PokeNode<E> {
    
    /** Set Methods. */
    /**
+    * Set PokeData as a called method when needed.
+    */
+   public void setPokeData(Pokemon pChose)
+   {
+      pokeData = pChose; 
+   }
+   /**
     * Set increaseNumCaught Method to increment current int.
     */
    public void increaseNumCaught() {
@@ -98,14 +107,14 @@ public class PokeNode<E> {
     * Set setLChild Method.
     * @param newLChild set to LChild.
     */
-   public void setLChild(PokeNode newLChild) {
+   public void setLChild(PokeNode<Pokemon> newLChild) {
       lChild = newLChild;
    }
    /**
     * Set setRChild Method.
     * @param newRChild set to LChild.
     */
-   public void setRChild(PokeNode newRChild) {
+   public void setRChild(PokeNode<Pokemon> newRChild) {
       rChild = newRChild;
    }
 }

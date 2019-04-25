@@ -25,4 +25,11 @@ public class PokemonException extends RuntimeException {
    public void setMessage(String mainMessage) {
       this.message = mainMessage;
    }
+   /**
+    * Constructor.
+    * @param message describing the cause of the error
+    */
+	public PokemonException(String message) {
+	      super(message);
+   }
 }
