@@ -75,6 +75,9 @@ public class PokeTree<T>
       {
          nData = nData + this.inOrder(node.getLChild());
          nData = nData + node.toString() + "\n";
+         nData = nData + this.inOrder(node.getPokemon().toString());
+         nData = nData + this.inOrder(node.getNumCaught());
+         nData = nData + node.toString() + "\n";
          nData = nData + this.inOrder(node.getRChild());
       }
       return nData;

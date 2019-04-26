@@ -49,21 +49,28 @@ public class MakePokemon
     */
    public static void printMenuChoice()
    {
-      System.out.println("Choose a Pokemon to add:");
-      System.out.println("1 for Bulbasaur");
-      System.out.println("2 for Ivysaur");
-      System.out.println("3 for Venusaur");
-      System.out.println("4 for Charmander");
-      System.out.println("5 for Charmeleon");
-      System.out.println("6 for Charizard");
-      System.out.println("7 for Squirtle");
-      System.out.println("8 for Wartortle");
-      System.out.println("9 for Blastoise");
+      System.out.println("\nCatch your Pokemon...");
+      System.out.println("List of catchable Pokemon:\n");
+      System.out.print("1 - Bulbasaur   ");
+      System.out.print("| 2 - Ivysaur     ");
+      System.out.print("| 3 - Venusaur\n");
+      System.out.print("-------------------------");
+      System.out.println("-------------------------");
+      System.out.print("4 - Charmander  ");
+      System.out.print("| 5 - Charmeleon  ");
+      System.out.print("| 6 - Charizard\n");
+      System.out.print("-------------------------");
+      System.out.println("-------------------------");
+      System.out.print("7 - Squirtle    ");
+      System.out.print("| 8 - Wartortle   ");
+      System.out.print("| 9 - Blastoise\n");
+      System.out.print("\n   Choose a Pokemon to catch (1 to 9): ");
    }
    
 	/**
     * Pokemon picker method.
     * My eyes are burning but this lets you pick a pokemon.
+    * @return the pokemon chosen for creation with unique name aspect thingies.
     */
    public static Pokemon pickAPokemon() {
       Pokemon chosenPokemon; 
@@ -85,9 +92,17 @@ public class MakePokemon
       hasNameInput = userIn.nextLine();
       String name = "";
    
-      if (hasNameInput.equals("Y")) {
+      if (hasNameInput.equals("Y") || hasNameInput.equals("y")) {
          System.out.println("What is the Pokemon's name?");
          name =  userIn.nextLine();
+      }
+      else if (hasNameInput.equals("N") || hasNameInput.equals("n")) {
+         System.out.println("Pokemon has no name.");
+      }
+      else
+      {
+         System.out.print("\n****Invalid input");
+         System.out.println(", please try again.****");
       }
       return name;
    }
