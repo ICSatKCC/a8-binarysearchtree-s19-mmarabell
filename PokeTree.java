@@ -58,7 +58,7 @@ public class PokeTree<T>
     * inOrderPrint method to print tree.
     * @return the tree.
     */
-   private String inOrderPrint()
+   public String inOrderPrint()
    {
       return this.inOrder(root);
    }
